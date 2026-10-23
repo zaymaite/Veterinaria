@@ -4,8 +4,360 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veterinaria</title>
+    <link rel="icon" href="recursos/imagenes/logo.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Lexend:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="recursos/imagenes/animales-inicio.webp">
+    <link rel="stylesheet" href="recursos/css/estilos.css">
 </head>
-<body>
-    
+<body class="is-loading">
+
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="huella" viewBox="0 0 100 100">
+            <ellipse cx="50" cy="68" rx="24" ry="20"/>
+            <ellipse cx="20" cy="42" rx="10" ry="13" transform="rotate(-20 20 42)"/>
+            <ellipse cx="38" cy="24" rx="10" ry="14" transform="rotate(-8 38 24)"/>
+            <ellipse cx="62" cy="24" rx="10" ry="14" transform="rotate(8 62 24)"/>
+            <ellipse cx="80" cy="42" rx="10" ry="13" transform="rotate(20 80 42)"/>
+        </symbol>
+    </svg>
+
+    <div class="cargador" id="cargador" aria-hidden="true">
+        <div class="cargador__hueso">
+            <svg viewBox="0 0 200 100">
+                <defs>
+                    <radialGradient id="croqueta" cx="40%" cy="35%" r="75%">
+                        <stop offset="0" stop-color="#D99A5B"/>
+                        <stop offset=".55" stop-color="#B06A31"/>
+                        <stop offset="1" stop-color="#7C431C"/>
+                    </radialGradient>
+                </defs>
+                <g fill="url(#croqueta)">
+                    <circle cx="38" cy="30" r="24"/>
+                    <circle cx="38" cy="70" r="24"/>
+                    <circle cx="162" cy="30" r="24"/>
+                    <circle cx="162" cy="70" r="24"/>
+                    <rect x="38" y="33" width="124" height="34" rx="6"/>
+                </g>
+
+                <g fill="#6E3A17" opacity=".45">
+                    <circle cx="30" cy="26" r="2.6"/><circle cx="45" cy="74" r="2.2"/>
+                    <circle cx="70" cy="44" r="2"/><circle cx="96" cy="56" r="2.6"/>
+                    <circle cx="122" cy="42" r="2"/><circle cx="150" cy="58" r="2.4"/>
+                    <circle cx="168" cy="26" r="2"/><circle cx="160" cy="76" r="2.6"/>
+                    <circle cx="26" cy="62" r="1.8"/><circle cx="84" cy="62" r="1.6"/>
+                </g>
+                <g fill="#F3C48E" opacity=".55">
+                    <ellipse cx="32" cy="22" rx="8" ry="4" transform="rotate(-30 32 22)"/>
+                    <ellipse cx="156" cy="22" rx="8" ry="4" transform="rotate(-30 156 22)"/>
+                    <rect x="60" y="38" width="70" height="4" rx="2"/>
+                </g>
+            </svg>
+        </div>
+        <div class="cargador__sombra"></div>
+        <p class="cargador__texto">Preparando todo para tu mascota</p>
+    </div>
+
+    <header class="hero" id="inicio">
+
+        <div class="decoracion" aria-hidden="true">
+            <svg class="mancha mancha--arriba" viewBox="0 0 300 240"><path d="M0 0h300c-6 46-40 70-82 86-50 19-66 70-112 106C70 220 30 232 0 236Z"/></svg>
+            <svg class="mancha mancha--abajo-izq" viewBox="0 0 420 330"><path d="M0 22c60-30 128-28 176 14 44 38 40 96 92 138 52 42 126 40 152 156H0Z"/></svg>
+            <svg class="mancha mancha--abajo-der" viewBox="0 0 200 230"><path d="M200 0v230H0c22-60 52-96 94-120C140 84 168 40 200 0Z"/></svg>
+
+            <svg class="huella h1" style="--r:-18deg"><use href="#huella"/></svg>
+            <svg class="huella h2" style="--r:14deg"><use href="#huella"/></svg>
+            <svg class="huella h3" style="--r:20deg"><use href="#huella"/></svg>
+            <svg class="huella h4" style="--r:-10deg"><use href="#huella"/></svg>
+            <svg class="huella h5" style="--r:12deg"><use href="#huella"/></svg>
+        </div>
+
+        <nav class="menu" aria-label="Principal">
+            <a href="#inicio" class="activo">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="hero__texto">
+            <p class="etiqueta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-8-4.7-8-11a4.5 4.5 0 0 1 8-2.8 4.5 4.5 0 0 1 8 2.8c0 6.3-8 11-8 11Z"/></svg>
+                Tu mascota, nuestra prioridad
+            </p>
+            <h1 class="titulo">
+                <span class="linea"><span>Un lugar al</span></span>
+                <span class="linea"><span>que tu mascota</span></span>
+                <span class="linea linea--script">
+                    <span class="necesita">quiere volver</span>
+                    <svg class="titulo__huella"><use href="#huella"/></svg>
+                    <svg class="subrayado" viewBox="0 0 340 24" preserveAspectRatio="none" aria-hidden="true">
+                        <path d="M4 18C80 6 200 2 336 12"/>
+                    </svg>
+                </span>
+            </h1>
+            <p class="bajada">Consultas, vacunas, controles y cuidado veterinario para su bienestar y felicidad.</p>
+        </div>
+
+        <div class="escenario" id="escenario">
+            <img class="escenario__foto" src="recursos/imagenes/animales-inicio.webp"
+                alt="Perros y gatos junto a un plato de alimento y juguetes" width="1671" height="941">
+        </div>
+
+        <div class="cartel">
+            <span class="cartel__hilo cartel__hilo--izq"></span>
+            <span class="cartel__hilo cartel__hilo--der"></span>
+            <div class="cartel__tabla">
+                <span class="cartel__cupula"><svg class="cartel__huella"><use href="#huella"/></svg></span>
+                <strong>Veterinaria</strong>
+                <span class="cartel__tel">
+                    <svg><use href="#huella"/></svg>
+                    <a href="tel:+5493516220419">+54 9 351 62-20419</a>
+                    <svg><use href="#huella"/></svg>
+                </span>
+            </div>
+        </div>
+
+        <ul class="beneficios">
+            <li>
+                <span class="beneficios__icono">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-8-4.7-8-11a4.5 4.5 0 0 1 8-2.8 4.5 4.5 0 0 1 8 2.8c0 6.3-8 11-8 11Z"/><path d="M7 11h2.5l1.5-2.5 2 5 1.5-2.5H17"/></svg>
+                </span>
+                Productos<br>de calidad
+            </li>
+            <li>
+                <span class="beneficios__icono">
+                    <svg viewBox="0 0 100 100" fill="currentColor"><use href="#huella"/></svg>
+                </span>
+                Asesoría<br>veterinaria
+            </li>
+        </ul>
+    </header>
+    <main>
+
+        <section class="cinta" aria-label="Nuestros servicios">
+            <div class="cinta__loop" id="cinta"
+                data-items="Consultorio veterinario|Cirugías|Análisis clínicos|Peluquería|Accesorios - Juguetes|Balanceados">
+            </div>
+        
+            <p class="cinta__respaldo">🐾 Consultorio veterinario 🐾 Cirugías 🐾 Análisis clínicos 🐾 Peluquería 🐾 Accesorios - Juguetes 🐾 Balanceados</p>
+        </section>
+
+        <section class="seccion servicios" id="servicios">
+            <div class="contenedor servicios__grilla">
+                <div class="servicios__texto revelar">
+                    <p class="etiqueta"><svg><use href="#huella"/></svg> Servicios</p>
+                    <h2 class="titulo-seccion">Todo el cuidado en <em>un solo lugar</em></h2>
+                    <p class="parrafo">Atendemos a tu mascota con dedicación en cada etapa de su vida: desde la primera consulta hasta el baño del fin de semana.</p>
+
+                    <ul class="lista-servicios">
+                        <li><span><svg viewBox="0 0 24 24"><path d="M12 21s-7.5-4.4-7.5-10.3A4.2 4.2 0 0 1 12 8.1a4.2 4.2 0 0 1 7.5 2.6C19.5 16.6 12 21 12 21Z"/><path d="M8 12h2l1.2-2 1.8 4 1.2-2H16"/></svg></span>Consultorio veterinario</li>
+                        <li><span><svg viewBox="0 0 24 24"><path d="M4 20 14.5 9.5M14.5 9.5l2-2a2.8 2.8 0 0 1 4 4l-2 2-4-4ZM7 17l-2-2"/></svg></span>Cirugías</li>
+                        <li><span><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 18l-5-9V3"/><path d="M7.5 14h9"/></svg></span>Análisis clínicos</li>
+                        <li><span><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.1 8.1 20 20M8.1 15.9 20 4"/></svg></span>Peluquería</li>
+                        <li><span><svg viewBox="0 0 24 24"><path d="M6.5 9a2.5 2.5 0 1 1 3-3l5 5a2.5 2.5 0 1 1 3 3 2.5 2.5 0 1 1-3 3l-5-5a2.5 2.5 0 1 1-3-3Z"/></svg></span>Accesorios y juguetes</li>
+                        <li><span><svg viewBox="0 0 24 24"><path d="M4 9h16l-1.5 11h-13L4 9Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg></span>Balanceados</li>
+                    </ul>
+                </div>
+
+                <div class="servicios__carrusel revelar">
+                    <div class="carrusel" id="carrusel" data-base-width="500" data-aspect="1.25">
+                        <div class="carrusel__marco" tabindex="0" aria-roledescription="carrusel" aria-label="Fotos de servicios">
+                            <div class="carrusel__pista">
+                                <article class="carrusel__item">
+                                    <img src="recursos/imagenes/consultorio.webp" alt="Consultorio veterinario con camilla de acero" draggable="false">
+                                    <div class="carrusel__info">
+                                        <h3>Consultorio veterinario</h3>
+                                        <p>Consultas, vacunas y controles en un espacio limpio y equipado.</p>
+                                    </div>
+                                </article>
+                                <article class="carrusel__item">
+                                    <img src="recursos/imagenes/peluqueria.webp" alt="Perro siendo peinado y cepillado en la peluquería" draggable="false">
+                                    <div class="carrusel__info">
+                                        <h3>Peluquería</h3>
+                                        <p>Baño, corte y cepillado para que vuelva a casa feliz y renovado.</p>
+                                    </div>
+                                </article>
+                                <article class="carrusel__item">
+                                    <img src="recursos/imagenes/accesorios.webp" alt="Juguetes, correa y plato con balanceado" draggable="false">
+                                    <div class="carrusel__info">
+                                        <h3>Accesorios y balanceados</h3>
+                                        <p>Juguetes, correas y alimento para cada etapa. Consultalos en el local.</p>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="carrusel__puntos" role="tablist"></div>
+                        </div>
+                    </div>
+                    <p class="carrusel__ayuda">Deslizá para ver más</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion nosotros" id="nosotros">
+            <div class="contenedor nosotros__grilla">
+                <div class="nosotros__collage revelar">
+                    <div class="collage__principal">
+                        <img src="recursos/imagenes/consultorio.webp" alt="Nuestro consultorio">
+                    </div>
+                    <div class="collage__circulo">
+                        <img src="recursos/imagenes/peluqueria.webp" alt="Peluquería canina">
+                    </div>
+
+                    <div class="sello" aria-hidden="true">
+                        <svg viewBox="0 0 200 200">
+                            <defs><path id="circuloSello" d="M100 100m-72 0a72 72 0 1 1 144 0a72 72 0 1 1-144 0"/></defs>
+                            <text><textPath href="#circuloSello">TU MASCOTA · NUESTRA PRIORIDAD · </textPath></text>
+                        </svg>
+                        <svg class="sello__huella"><use href="#huella"/></svg>
+                    </div>
+                </div>
+
+                <div class="nosotros__texto revelar">
+                    <p class="etiqueta"><svg><use href="#huella"/></svg> Nosotros</p>
+                    <h2 class="titulo-seccion">Los cuidamos como <em>si fueran nuestros</em></h2>
+                    <p class="parrafo">Somos un equipo de veterinarios y amantes de los animales. Creemos que cada mascota es parte de la familia, por eso nos tomamos el tiempo de conocerla, escucharte y explicarte todo con claridad.</p>
+                    <p class="parrafo">Queremos que cada visita sea tranquila: para ellos y también para vos.</p>
+
+                    <ul class="valores">
+                        <li>
+                            <span class="valores__icono"><svg viewBox="0 0 24 24"><path d="M12 20.5s-8-4.7-8-11a4.5 4.5 0 0 1 8-2.8 4.5 4.5 0 0 1 8 2.8c0 6.3-8 11-8 11Z"/></svg></span>
+                            <div><strong>Atención cercana</strong><p>Trato cálido y paciente, sin apuros.</p></div>
+                        </li>
+                        <li>
+                            <span class="valores__icono"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+                            <div><strong>Equipo profesional</strong><p>Diagnósticos claros y tratamientos responsables.</p></div>
+                        </li>
+                        <li>
+                            <span class="valores__icono"><svg viewBox="0 0 100 100" class="relleno"><use href="#huella"/></svg></span>
+                            <div><strong>Todo en un lugar</strong><p>Salud, estética y alimento sin ir de un lado a otro.</p></div>
+                        </li>
+                    </ul>
+
+                    <a href="#contacto" class="boton" data-pestana="turno">Pedí un turno <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion contacto" id="contacto">
+            <div class="contenedor">
+                <div class="contacto__encabezado revelar">
+                    <p class="etiqueta"><svg><use href="#huella"/></svg> Contacto</p>
+                    <h2 class="titulo-seccion">Estamos para <em>ayudarte</em></h2>
+                    <p class="parrafo">Reservá tu turno online o escribinos con tu consulta. Te respondemos por WhatsApp.</p>
+                </div>
+
+                <div class="contacto__grilla">
+                    <div class="contacto__info revelar">
+                        <a class="dato" href="https://wa.me/5493516220419" target="_blank" rel="noopener">
+                            <span class="dato__icono"><svg viewBox="0 0 24 24"><path d="M3.5 20.5 5 16a8.5 8.5 0 1 1 3.2 3.1l-4.7 1.4Z"/><path d="M9 8.5c0 3.3 3 6.5 6.5 6.5l1-1.5-2-1-1 .8a4.6 4.6 0 0 1-2.3-2.3l.8-1-1-2L9 8.5Z"/></svg></span>
+                            <span><small>WhatsApp / Teléfono</small><strong>+54 9 351 62-20419</strong></span>
+                        </a>
+                        <div class="dato">
+                            <span class="dato__icono"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+                            <span><small>Dirección</small><strong>San Juan Bv, Güemes 687, X5000 ATG, Córdoba</strong></span>
+                        </div>
+                        <div class="dato">
+                            <span class="dato__icono"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+                            <span><small>Horarios</small><strong>Lun a Vie · 9:30 a 13 h y 16:30 a 20:30 h</strong><strong>Sábados · 9:30 a 13:30 h</strong><strong>Domingos · Cerrado</strong></span>
+                        </div>
+                        <a class="dato" href="https://www.instagram.com/vete_sanjuan/" target="_blank" rel="noopener">
+                            <span class="dato__icono"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></span>
+                            <span><small>Instagram</small><strong>@vete_sanjuan</strong></span>
+                        </a>
+                        <div class="contacto__mapa">
+                            <iframe title="Ubicación de la veterinaria"
+                                    src="https://www.google.com/maps?q=San%20Juan%20Bv%2C%20G%C3%BCemes%20687%2C%20X5000%20ATG%2C%20C%C3%B3rdoba%2C%20Argentina&z=16&output=embed"
+                                    loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                            <a class="mapa__boton" href="https://www.google.com/maps/search/?api=1&query=San%20Juan%20Bv%2C%20G%C3%BCemes%20687%2C%20X5000%20ATG%2C%20C%C3%B3rdoba%2C%20Argentina" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+                                Cómo llegar
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contacto__panel revelar">
+                        <div class="pestanas" role="tablist" aria-label="¿Qué querés hacer?">
+                            <button type="button" role="tab" id="tab-turno" aria-controls="panel-turno" aria-selected="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Reservar turno</button>
+                            <button type="button" role="tab" id="tab-consulta" aria-controls="panel-consulta" aria-selected="false" tabindex="-1"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v8a2.5 2.5 0 0 1-2.5 2.5H10l-4.5 4v-4h0A1.5 1.5 0 0 1 4 14.5Z"/><path d="M8.5 8.5h7M8.5 11.5h4.5"/></svg>Hacer una consulta</button>
+                        </div>
+
+                        <div class="panel" id="panel-turno" role="tabpanel" aria-labelledby="tab-turno">
+                            <p class="panel__intro">Elegí el servicio, el día y el horario que te quede cómodo. La confirmación te llega por mail.</p>
+                            <div class="servicio-turno" role="radiogroup" aria-label="Servicio">
+                                <button type="button" role="radio" aria-checked="true" data-agenda="consulta">Consulta veterinaria</button>
+                                <button type="button" role="radio" aria-checked="false" data-agenda="peluqueria">Peluquería</button>
+                            </div>
+                            <div class="agenda" id="agenda">
+                                <iframe class="agenda__marco" title="Agenda de turnos" loading="lazy" hidden></iframe>
+                                <div class="agenda__aviso" hidden>
+                                    <span class="agenda__icono"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></span>
+                                    <h3>La agenda online está casi lista</h3>
+                                    <p>Mientras tanto, pedinos tu turno por WhatsApp y te confirmamos día y horario.</p>
+                                    <a class="boton" id="turnoWhatsapp" href="https://wa.me/5493516220419" target="_blank" rel="noopener">Pedir turno por WhatsApp <span aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+                            <p class="panel__nota">¿Cirugía o análisis clínicos? Primero lo charlamos con vos: <button type="button" class="enlace" data-pestana="consulta">escribinos tu consulta</button>.</p>
+                        </div>
+
+                        <div class="panel" id="panel-consulta" role="tabpanel" aria-labelledby="tab-consulta" hidden>
+                            <p class="panel__intro">Contanos qué le pasa a tu mascota o qué necesitás. Te respondemos por WhatsApp.</p>
+                            <form class="formulario" id="formulario">
+                                <div class="formulario__fila">
+                                    <label>Tu nombre
+                                        <input type="text" name="nombre" required autocomplete="name">
+                                    </label>
+                                    <label>Nombre de tu mascota
+                                        <input type="text" name="mascota">
+                                    </label>
+                                </div>
+                                <label>¿Sobre qué es tu consulta?
+                                    <select name="servicio">
+                                        <option>Salud de mi mascota</option>
+                                        <option>Cirugía</option>
+                                        <option>Análisis clínicos</option>
+                                        <option>Peluquería</option>
+                                        <option>Accesorios / juguetes</option>
+                                        <option>Balanceados</option>
+                                        <option>Otra consulta</option>
+                                    </select>
+                                </label>
+                                <label>Mensaje
+                                    <textarea name="mensaje" rows="5" placeholder="Contanos un poco más…"></textarea>
+                                </label>
+                                <button type="submit" class="boton boton--ancho">Enviar por WhatsApp <span aria-hidden="true">→</span></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <div class="contenedor pie__grilla">
+            <div>
+                <p class="pie__logo"><svg><use href="#huella"/></svg> Veterinaria</p>
+                <p class="pie__frase">Tu mascota, nuestra prioridad.</p>
+            </div>
+            <nav class="pie__menu" aria-label="Pie">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <div class="pie__contacto">
+                <a class="pie__tel" href="tel:+5493516220419">+54 9 351 62-20419</a>
+                <a class="pie__ig" href="https://www.instagram.com/vete_sanjuan/" target="_blank" rel="noopener" aria-label="Instagram @vete_sanjuan"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg><span>@vete_sanjuan</span></a>
+            </div>
+        </div>
+        <p class="pie__copy">© <span id="anio">2026</span> Veterinaria. Todos los derechos reservados.</p>
+    </footer>
+
+    <a class="whatsapp" href="https://wa.me/5493516220419" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
+        <svg viewBox="0 0 32 32"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3Zm0 23.6c-2 0-4-.6-5.7-1.6l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6Zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.2 1.3 3.4c.2.2 2.3 3.5 5.6 4.9 2 .9 2.9 1 3.9.8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5l-.6-.3Z"/></svg>
+    </a>
+
+    <script src="recursos/js/main.js"></script>
 </body>
 </html>
